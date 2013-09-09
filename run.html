@@ -29,9 +29,24 @@ and open the template in the editor.
 var charPosX = screenCanvas.width / 2 - 32;
 var charPosY = screenCanvas.height / 2 - 32;
 
-function drawScene(){
+var tileSetImage = new Image();
+tileSetImage.src = 'img/tileset.png';
+
+function drawScene(frame){  // drawScene function is called at every frame
+                            // buffer is flipped to screen after this function
     bufferCtx.fillStyle = 'pink';
     bufferCtx.fillRect(charPosX, charPosY, 64, 64);
+    
+    for(i=0;i<10;i++){
+        bufferCtx.drawImage(tileSetImage,
+                            0, 0,
+                            32, 32,
+                            Math.round(i*32), 0,
+                            32, 32
+        );
+    }
+    
+    
 }
 
 window.onresize = resizeWindow;

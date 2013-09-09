@@ -30,7 +30,7 @@ function animLoop(){
 function render(frame){
     bufferCtx.fillStyle = '#6666ff';
     bufferCtx.fillRect(0,0,bufferCanvas.width, bufferCanvas.height);
-    drawScene();
+    drawScene(frame);
     flip(); 
 }
 
