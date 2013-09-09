@@ -41,10 +41,8 @@ bufferCtx.fillRect(0,0,bufferCanvas.width, bufferCanvas.height);
 
 function flip(){
     screenCtx.drawImage(bufferCanvas,
-                        0, 0,
-                        screenCanvas.width, screenCanvas.height,
-                        0, 0,
-                        screenCanvas.width, screenCanvas.height);
+                        0, 0, screenCanvas.width, screenCanvas.height,
+                        0, 0, screenCanvas.width, screenCanvas.height );
 }
 
 function animLoop(){
