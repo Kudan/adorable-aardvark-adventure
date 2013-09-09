@@ -19,9 +19,28 @@ and open the template in the editor.
                 top: 0px;
             }
         </style>
+        <script src="animframe.js" type="text/javascript"></script>
     </head>
     <body>
         <canvas id="screenCanvas"></canvas>
+        <script type="text/javascript">
+            
+// Initializating canvas for screen 
+var screenCanvas = document.getElementById('screenCanvas');
+var screenCtx = screenCanvas.getContext('2d');
+screenCanvas.width = 320;
+screenCanvas.height = 240;
+
+// Initializing canvas for buffer
+var bufferCanvas = document.createElement('canvas');
+var bufferCtx = bufferCanvas.getContext('2d');
+bufferCanvas.width = 320;
+bufferCanvas.height = 240;
+bufferCtx.fillStyle = '#6666ff';
+bufferCtx.fillRect(0,0,bufferCanvas.width, bufferCanvas.height);
+
+
+
+        </script>
     </body>
 </html>
-
