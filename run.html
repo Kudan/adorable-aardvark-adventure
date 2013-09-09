@@ -24,6 +24,7 @@ and open the template in the editor.
     <body>
         <canvas id="screenCanvas"></canvas>
         <script src="canvasinit.js" type="text/javascript"></script>
+        <script src="maparray.js" type="text/javascript"></script>
         <script type="text/javascript">
 
 var charPosX = screenCanvas.width / 2 - 32;
@@ -36,14 +37,19 @@ function drawScene(frame){  // drawScene function is called at every frame
                             // buffer is flipped to screen after this function
     bufferCtx.fillStyle = 'pink';
     bufferCtx.fillRect(charPosX, charPosY, 64, 64);
-    
-    for(i=0;i<10;i++){
-        bufferCtx.drawImage(tileSetImage,
-                            0, 0,
-                            32, 32,
-                            Math.round(i*32), 0,
-                            32, 32
-        );
+
+    for(y=0;y<mapArray.length;y++){
+        for(x=0;x<mapArray[y].length;x++){
+            if(mapArray[y][x]===1 && x*32<bufferCanvas.width && y*32<bufferCanvas.height){
+                bufferCtx.drawImage(tileSetImage,
+                                    0, 0,
+                                    32, 32,
+                                    Math.round(x*32), Math.round(y*32),
+                                    32, 32
+                                    
+                );
+            }
+        }
     }
     
     
