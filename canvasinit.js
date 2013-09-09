@@ -5,14 +5,14 @@
 // Initializating canvas for screen 
 var screenCanvas = document.getElementById('screenCanvas');
 var screenCtx = screenCanvas.getContext('2d');
-screenCanvas.width = 320;
-screenCanvas.height = 240;
+screenCanvas.width = 480;
+screenCanvas.height = 360;
 
 // Initializing canvas for buffer
 var bufferCanvas = document.createElement('canvas');
 var bufferCtx = bufferCanvas.getContext('2d');
-bufferCanvas.width = 320;
-bufferCanvas.height = 240;
+bufferCanvas.width = 480;
+bufferCanvas.height = 360;
 bufferCtx.fillStyle = '#6666ff';
 bufferCtx.fillRect(0,0,bufferCanvas.width, bufferCanvas.height);
 
